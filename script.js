@@ -14,7 +14,6 @@ const boss = {
       target.hp -= this.atk;
       console.log(`将軍が${target.name}を攻撃!`);
     }
-    // 死亡判定
     for(let i=playerField.length-1; i>=0; i--){
       if(playerField[i].hp <= 0) playerField.splice(i,1);
     }
@@ -34,14 +33,12 @@ function createCard(name){
         hp:7,
         atk:0,
         effect:function(field,boss){
-          // 信者追加
           field.push({
             name:"信者",
             hp:1,
             atk:0,
             effect:function(b){ b.hp -=2; }
           });
-          // ポワのサイン
           boss.hp -=3;
         }
       };
@@ -60,10 +57,9 @@ function updateHand(){
     const cardDiv = document.createElement("div");
     cardDiv.className = "card";
 
-    // 尊師だけ画像を表示
     if(c.name === "尊師"){
       const img = document.createElement("img");
-      img.src = "assets/sonshi.jpg"; // ← リポジトリに置いた画像
+      img.src = "assets/sonshi.jpg"; // assetsフォルダ内
       cardDiv.appendChild(img);
     }
 
