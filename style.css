@@ -1,0 +1,14 @@
+.card {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid black;
+  width: 120px;
+  text-align: center;
+  background: white;
+}
+.card img {
+  display: block;
+  margin: auto;
+  width: 80px;
+}
